@@ -13,14 +13,14 @@ export default function Header() {
       const currentScrollY = window.scrollY;
       
       // Trigger animation on scroll direction change or significant scroll
-      if (Math.abs(currentScrollY - lastScrollY) > 50 && !isAnimating) {
+      if (Math.abs(currentScrollY - lastScrollY) > 30 && !isAnimating) {
         isAnimating = true;
         setShouldAnimate(true);
         
         setTimeout(() => {
           setShouldAnimate(false);
           isAnimating = false;
-        }, 800);
+        }, 600);
       }
       
       lastScrollY = currentScrollY;
@@ -31,7 +31,7 @@ export default function Header() {
     // Initial animation on load
     setTimeout(() => {
       setShouldAnimate(true);
-      setTimeout(() => setShouldAnimate(false), 800);
+      setTimeout(() => setShouldAnimate(false), 600);
     }, 1000);
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -43,12 +43,17 @@ export default function Header() {
         <motion.div
           className="inline-block"
           animate={shouldAnimate ? {
-            rotate: [-2, 2, -1, 0],
-            scale: [1.02, 0.98, 1.01, 1],
+            x: [0, -8, 12, -6, 4, -2, 0],
+            y: [0, 6, -10, 8, -4, 2, 0],
+            rotate: [0, -3, 5, -2, 3, -1, 0],
+            scale: [1, 1.05, 0.95, 1.08, 0.92, 1.02, 1],
+            skewX: [0, -2, 4, -3, 1, 0],
+            skewY: [0, 1, -3, 2, -1, 0],
           } : {}}
           transition={{
-            duration: 0.8,
-            ease: "easeInOut"
+            duration: 0.6,
+            ease: "linear",
+            times: [0, 0.1, 0.3, 0.5, 0.7, 0.9, 1]
           }}
         >
           <img 
