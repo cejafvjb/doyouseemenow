@@ -49,8 +49,8 @@ export default function ImageGallery({ isAdminMode }: ImageGalleryProps) {
   if (isLoading) {
     return (
       <div className="w-full">
-        <div className="thumbnail-grid grid gap-2 grid-cols-5 sm:grid-cols-8 lg:grid-cols-10">
-          {Array.from({ length: 10 }).map((_, index) => (
+        <div className="grid gap-2 grid-cols-3">
+          {Array.from({ length: 6 }).map((_, index) => (
             <div key={index} className="aspect-square bg-gray-100 animate-pulse" />
           ))}
         </div>
@@ -59,22 +59,31 @@ export default function ImageGallery({ isAdminMode }: ImageGalleryProps) {
   }
 
   const galleryContent = (
-    <div className="thumbnail-grid grid gap-2 grid-cols-5 sm:grid-cols-8 lg:grid-cols-10">
-      {images.map((image, index) => (
-        <div
-          key={image.id}
-          className={`thumbnail-item aspect-square bg-gray-100 ${
-            isAdminMode ? 'cursor-move' : 'cursor-pointer'
-          }`}
-        >
-          <img 
-            src={`/uploads/${image.filename}`}
-            alt={image.originalName}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
+    <div>
+      <div className="grid gap-2 grid-cols-3">
+        {images.map((image, index) => (
+          <div
+            key={image.id}
+            className={`aspect-square bg-gray-100 ${
+              isAdminMode ? 'cursor-move' : 'cursor-pointer'
+            }`}
+          >
+            <img 
+              src={`/uploads/${image.filename}`}
+              alt={image.originalName}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+      {images.length > 0 && (
+        <div className="text-center mt-8">
+          <div className="text-black text-xl main-font">
+            KREDIT
+          </div>
         </div>
-      ))}
+      )}
     </div>
   );
 
@@ -83,11 +92,11 @@ export default function ImageGallery({ isAdminMode }: ImageGalleryProps) {
       <div className="w-full">
         <DragDropContext onDragEnd={handleDragEnd}>
           <Droppable droppableId="image-gallery" direction="horizontal">
-            {(provided) => (
+            {(provided: any) => (
               <div
                 ref={provided.innerRef}
                 {...provided.droppableProps}
-                className="thumbnail-grid grid gap-2 grid-cols-5 sm:grid-cols-8 lg:grid-cols-10"
+                className="grid gap-2 grid-cols-3"
               >
                 {images.map((image, index) => (
                   <Draggable
@@ -95,12 +104,12 @@ export default function ImageGallery({ isAdminMode }: ImageGalleryProps) {
                     draggableId={image.id.toString()}
                     index={index}
                   >
-                    {(provided, snapshot) => (
+                    {(provided: any, snapshot: any) => (
                       <div
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                        className={`thumbnail-item aspect-square bg-gray-100 cursor-move ${
+                        className={`aspect-square bg-gray-100 cursor-move ${
                           snapshot.isDragging ? 'opacity-50' : ''
                         }`}
                       >
@@ -119,6 +128,13 @@ export default function ImageGallery({ isAdminMode }: ImageGalleryProps) {
             )}
           </Droppable>
         </DragDropContext>
+        {images.length > 0 && (
+          <div className="text-center mt-8">
+            <div className="text-black text-xl main-font">
+              KREDIT
+            </div>
+          </div>
+        )}
       </div>
     );
   }
