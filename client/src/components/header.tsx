@@ -10,7 +10,6 @@ export default function Header() {
           animate={{
             y: [0, -15, 0],
             rotate: [0, -0.5, 0],
-            scale: [1, 1.02, 1],
           }}
           transition={{
             duration: 4.0,
