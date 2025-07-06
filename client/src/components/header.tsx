@@ -21,7 +21,7 @@ export default function Header() {
           <img 
             src={doYouSeeMeImage}
             alt="Do You See Me?" 
-            className="max-w-full h-auto" 
+            className="max-w-full h-auto ml-[1px] mr-[1px]" 
             style={{ maxHeight: '120px' }} 
           />
         </motion.div>
