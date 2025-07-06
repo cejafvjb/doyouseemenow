@@ -11,7 +11,7 @@ export default function Home() {
     <div className="bg-white min-h-screen main-font">
       <Header />
       
-      <main className="max-w-6xl mx-auto px-4 pb-8">
+      <main className="max-w-6xl mx-auto px-4 pb-8 pt-40">
         <AdminControls 
           isAdminMode={isAdminMode} 
           setIsAdminMode={setIsAdminMode} 

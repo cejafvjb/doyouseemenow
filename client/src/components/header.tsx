@@ -38,7 +38,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="w-full py-8 px-4">
+    <header className="fixed top-0 left-0 w-full py-8 px-4 bg-white z-50">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           className="inline-block"
