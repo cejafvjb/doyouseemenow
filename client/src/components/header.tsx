@@ -3,7 +3,7 @@ import doYouSeeMeImage from "@assets/do u_1751762760792.jpg";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full py-8 px-4 bg-white z-50">
+    <header className="fixed top-0 left-0 w-full py-8 px-4 z-10">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           className="inline-block"
@@ -20,7 +20,7 @@ export default function Header() {
           <img 
             src={doYouSeeMeImage}
             alt="Do You See Me?" 
-            className="max-w-full h-auto ml-[1px] mr-[1px] mt-[1px] mb-[1px] pl-[0px] pr-[0px]" 
+            className="max-w-full h-auto opacity-30" 
             style={{ maxHeight: '120px' }} 
           />
         </motion.div>

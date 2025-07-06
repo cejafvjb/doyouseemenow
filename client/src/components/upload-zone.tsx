@@ -83,7 +83,11 @@ export default function UploadZone() {
   };
 
   return (
-    <div className="mb-12">
+    <div className="mb-12 text-center">
+      <div className="text-black text-xl mb-8 main-font">
+        RANDOM PROJEKT
+      </div>
+      
       <div 
         className={`upload-zone w-full py-16 px-8 text-center cursor-pointer transition-colors duration-200 ${
           isDragOver ? 'bg-gray-50' : 'hover:bg-gray-50'
