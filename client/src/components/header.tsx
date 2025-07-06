@@ -43,14 +43,13 @@ export default function Header() {
         <motion.div
           className="inline-block"
           animate={shouldAnimate ? {
-            y: [0, -20, -15, -25, -10, -18, -5, -12, 0],
-            rotate: [0, -1, 1, -0.5, 0.5, -0.3, 0.3, 0],
-            scale: [1, 1.02, 0.98, 1.05, 0.96, 1.03, 0.99, 1.01, 1],
+            y: [0, -15, 0],
+            rotate: [0, -0.5, 0],
+            scale: [1, 1.02, 1],
           } : {}}
           transition={{
-            duration: 1.2,
-            ease: [0.25, 0.46, 0.45, 0.94],
-            times: [0, 0.15, 0.25, 0.4, 0.55, 0.7, 0.8, 0.9, 1]
+            duration: 2.0,
+            ease: "easeInOut",
           }}
         >
           <img 
