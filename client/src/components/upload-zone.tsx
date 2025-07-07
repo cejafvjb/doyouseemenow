@@ -84,8 +84,11 @@ export default function UploadZone() {
 
   return (
     <div className="mb-12 text-center">
-      <div className="text-black text-xl mb-8 main-font">
-        RANDOM PROJEKT
+      <div className="text-black text-2xl mb-4 main-font">
+        A TEĎ MĚ VIDÍŠ?
+      </div>
+      <div className="text-black text-sm mb-8 main-font max-w-2xl mx-auto px-4">
+        is a photography collecting project with QR codes, movement and moving people. Made for curious human beings, that are able to encounter the little things inbetween.
       </div>
       
       <div 
